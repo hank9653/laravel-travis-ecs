@@ -11,4 +11,4 @@ RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R 775 /var/www/html
 
 RUN service apache2 restart
-
+CMD /usr/sbin/apache2ctl -D FOREGROUND
