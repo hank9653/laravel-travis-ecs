@@ -10,4 +10,5 @@ RUN php artisan key:generate
 RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R 775 /var/www/html
 
-CMD /usr/sbin/apache2ctl -D FOREGROUND
+RUN service apache2 restart
+
