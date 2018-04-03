@@ -1,0 +1,18 @@
+{
+    "cluster": "laravel",
+    "serviceName": "laravel",
+    "taskDefinition": "laravel",
+    "loadBalancers": [
+        {
+            "loadBalancerName": "laravel-web",
+            "containerName": "laravel",
+            "containerPort": 80
+        }
+    ],
+    "role": "laravelServiceRole",
+    "desiredCount": 1,
+    "deploymentConfiguration": {
+        "maximumPercent": 100,
+        "minimumHealthyPercent": 0
+    }
+}
