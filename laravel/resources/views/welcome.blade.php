@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel travis ecs test
+                    Laravel travis ecs test 2
                 </div>
 
                 <div class="links">
