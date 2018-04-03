@@ -1,0 +1,17 @@
+sudo: false
+dist: trusty
+
+language: python
+
+before_install:
+  - pip install awscli
+
+jobs:
+  include:
+  - stage: build and push ap docker image to aws ecr
+    script:
+      - eval $(aws ecr get-login --no-include-email)
+      - docker build -t $AP_NAME .
+      - docker tag $AP_NAME:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/ap/$AP_NAME:latest
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/ap/$AP_NAME:latest
+      - docker 
